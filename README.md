@@ -14,7 +14,7 @@ This is a bare bones ubiweb site. It requires [ubiweb-core](https://github.com/u
 ```
 - [Install ubiweb-core](https://github.com/ubiweb-media/ubiweb-core).
 - Clone domain framework: `git clone https://github.com/ubiweb-media/ubiweb-domain.git domain.com`
-- Adjust path in `domain.com/index.php` to the location of `ubiweb-core/bootstrap.php`
+- Adjust `CORE_PATH` path in `.env` to the location of `ubiweb-core/bootstrap.php`
 
 That's it! Of course, you're going to want to configure this more to have a presentable website.
 
@@ -33,10 +33,10 @@ That's it! Of course, you're going to want to configure this more to have a pres
 
 // Your custom styles.
 ```
-- Run `sass content/styles/main.scss:assets/main.css` or `sass watch content/styles/main.scss:assets/main.css` to watch for changes. 
+- Run `sass content/styles/main.scss:assets/main.css` or `sass watch content/styles/main.scss:assets/main.css` to watch for changes.
 
 ## Content
-All of the site's content and configuration resides in `./content`. 
+All of the site's content and configuration resides in `./content`.
 - `config.yml` contains the installation configuration. There are some special names for things like the template, otherwise you can define your own arbitrary global variables here.
 - `pages.yml` contains the site's pages and is where you define the route URIs. If it doesn't exist here, the request will throw a 404. You can define more complicated POST, or DELETE routes by including an `./app/routes.php`.
 - `translations.yml` is where you can supply translations for things like routes and overriding template variables. The main content is simply translated via its content directory `eg) ./content/fr/about.html`.
@@ -100,13 +100,13 @@ Perhaps your template gives you different layouts, change them like so and take 
 
 ## Extending Functionality
 
-Sometimes you may want to do more. What we've outlined so far is the basics for a working site, but you can also extend it to do alot more. 
+Sometimes you may want to do more. What we've outlined so far is the basics for a working site, but you can also extend it to do alot more.
 
 ### Extending Layouts
 You can override your templates layouts by copying `vendor/templateName/layout.html` or any other template file and putting it in a `./content/layouts` directory. This directory overrides any templates or partials with the same name.
 
 ### Creating an APP
-You can optionally create a directory called `./app` that can be used to build ontop of the current framework and build your own custom application. There are some functions and files already available for your convenience. For example, maybe you want to have a route we can post to and log someone in. Try the following 
+You can optionally create a directory called `./app` that can be used to build ontop of the current framework and build your own custom application. There are some functions and files already available for your convenience. For example, maybe you want to have a route we can post to and log someone in. Try the following
 
 - Create a POST route in `./app/routes.php`, like so `$app->post('login', 'AuthController@login')`
 - Create a corresponding controller in `./app/controller/AuthController.php` in order to receive your request.
