@@ -15,6 +15,7 @@ require $corePath . '/bootstrap.php';
 // Instantiate App
 $app = new Ubiweb\Site(__DIR__);
 
+//Optional (example) Routes
 require $location . "/app/routes.php";
 
 $app->run();
