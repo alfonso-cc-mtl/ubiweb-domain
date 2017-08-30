@@ -4,3 +4,7 @@ default_language: en
 site_title: Ubiweb Sample Domain
 languages:
     - en
+menu:
+    main:
+        home:
+            text: Homepage
