@@ -1,5 +1,5 @@
 <?php
 
 return [
-	// 'default_language' => 'fr'
+	'admin_email' => env('ADMIN_EMAIL')
 ];
