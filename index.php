@@ -5,8 +5,10 @@ $location = __DIR__;
 require  $location . '/vendor/autoload.php';
 
 // Load Environment
-$dotenv = new \Dotenv\Dotenv(__DIR__);
-$dotenv->load();
+if( file_exists( $location . '.env' ) ) {
+  $dotenv = new \Dotenv\Dotenv(__DIR__);
+  $dotenv->load();
+}
 $corePath = getenv('CORE_PATH');
 
 // Load Ubiweb Core
