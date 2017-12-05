@@ -1,11 +1,10 @@
 <?php
 
 // Composer Autoloader
-$location = __DIR__;
-require  $location . '/vendor/autoload.php';
+require  __DIR__ . '/vendor/autoload.php';
 
 // Load Environment
-if( file_exists( $location . '/.env' ) ) {
+if (!isset($_SERVER['CORE_PATH'])) {
   $dotenv = new \Dotenv\Dotenv(__DIR__);
   $dotenv->load();
 }
@@ -17,7 +16,7 @@ require $corePath . '/bootstrap.php';
 // Instantiate App
 $app = new Ubiweb\Site(__DIR__);
 
-// Optional (example) Routes
-// require $location . "/app/routes.php";
+// Only Needed for demo
+// require __DIR__ . '/app/routes.php';
 
 $app->run();
