@@ -15,7 +15,13 @@ This is a bare bones ubiweb site. It requires [ubiweb-core](https://github.com/u
 - [Install ubiweb-core](https://github.com/ubiweb-media/ubiweb-core).
 - Clone domain framework: `git clone https://github.com/ubiweb-media/ubiweb-domain.git domain.com`
 - Adjust `CORE_PATH` path in `.env` to the location of `ubiweb-core/bootstrap.php`
-- **OR** For a more streamlined approach. Install [Laravel Valet](https://laravel.com/docs/5.5/valet) and park your domains directory. Then under `/usr/local/etc/nginx/fastcgi_params` append the entries: `fastcgi_param CORE_PATH  "/path/to/core";`
+
+**OR** 
+
+For a more streamlined approach: 
+- Install [Laravel Valet](https://laravel.com/docs/5.5/valet) and park your domains directory.
+- Use `.test` as the TLD (default `.dev` is used by Chrome), by running `valet domain test`
+- Then under `/usr/local/etc/nginx/fastcgi_params` append the entries: `fastcgi_param CORE_PATH  "/path/to/core";` so we won't need a `.env` file in each domain.
 
 That's it! Of course, you're going to want to configure this more to have a presentable website.
 
