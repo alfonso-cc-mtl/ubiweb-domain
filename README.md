@@ -22,6 +22,7 @@ For a more streamlined approach:
 - Install [Laravel Valet](https://laravel.com/docs/5.5/valet) and park your domains directory.
 - Use `.test` as the TLD (default `.dev` is used by Chrome), by running `valet domain test`
 - Then under `/usr/local/etc/nginx/fastcgi_params` append the entries: `fastcgi_param CORE_PATH  "/path/to/core";` so we won't need a `.env` file in each domain.
+- Restart nginx to make sure vars get loaded. `valet restart`
 
 That's it! Of course, you're going to want to configure this more to have a presentable website.
 
