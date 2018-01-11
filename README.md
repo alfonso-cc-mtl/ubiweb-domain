@@ -25,6 +25,8 @@ For a more streamlined approach:
 
 That's it! Of course, you're going to want to configure this more to have a presentable website.
 
+Some templates require this global package to be installed: `composer global require "fxp/composer-asset-plugin:~1.3"`
+
 ## Setup
 
 - First [choose a base template](https://github.com/ubiweb-media/template-starter).
