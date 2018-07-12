@@ -1,22 +1,101 @@
 # A template must be specified
-template: template-starter
+template: template-bedrock
+site_title: Bedrock Template
 default_language: en
-site_title: Ubiweb Sample Domain
 languages:
     - en
+    - fr
+blog: ubiwebblog
+blog_base: /blog
+
+gallery_base: /gallery
+gallery_path: /images/gallery
+menu_active_class: active
+
 menu:
     main:
-        home: Homepage
-
-site_title: Ubiweb
-site_description: We are your online partner, so you can keep doing what you do best for your business.
-
-ua_code: UA-57419359-1
-admin_email: info@ubiweb.ca
-
-## Blog Settings
-blog_base: /blog
-last_updated: 2017-10-27
+        home:
+            text: Home <span class="caret"></span>
+            anchor:
+                class: nav-link dropdown-toggle
+                id: navbarDropdown
+                role: button
+                data-toggle: dropdown
+                aria-haspopup: true
+                aria-expanded: false
+            attributes:
+                class: nav-item dropdown
+            submenu:
+                "http://ubiweb.ca":
+                    text: Ubiweb
+                    anchor:
+                      class: dropdown-item
+        about:
+            text: About
+            attributes:
+              class: nav-item
+            anchor:
+              class: nav-link
+        # styleguide:
+        #     text: Styleguide
+        #     attributes:
+        #       class: nav-item
+        #     anchor:
+        #       class: nav-link
+        blog:
+            text: Blog
+            attributes:
+              class: nav-item
+            anchor:
+              class: nav-link
+        gallery:
+            text: Gallery
+            attributes:
+              class: nav-item
+            anchor:
+              class: nav-link
+        contact:
+            text: Contact
+            attributes:
+              class: nav-item
+            anchor:
+              class: nav-link
+    onepager:
+        # "#about":
+        about:
+            text: About
+            attributes:
+              class: nav-item
+            anchor:
+              class: nav-link
+              # data-scroll-to: about
+              # data-scroll-to-offset: header
+        blog:
+            text: Blog
+            attributes:
+              class: nav-item
+            anchor:
+              class: nav-link
+        gallery:
+            text: Gallery
+            attributes:
+              class: nav-item
+            anchor:
+              class: nav-link
+        # "#contact":
+        contact:
+            text: Contact
+            attributes:
+              class: nav-item
+            anchor:
+              class: nav-link
+              # data-scroll-to: contact
+        # styleguide:
+        #     text: Styleguide
+        #     attributes:
+        #       class: nav-item
+        #     anchor:
+        #       class: nav-link
 
 social:
     facebook: https://www.facebook.com/ubiweb1/
@@ -24,7 +103,6 @@ social:
     linkedin: https://ca.linkedin.com/company/ubiweb
     youtube: https://www.youtube.com/user/ubiweb
     google: https://plus.google.com/107381435430037598028
-
 
 business:
     type: ProfessionalService
