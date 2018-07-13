@@ -1,6 +1,6 @@
 # Ubiweb Domain
 
-This is a bare bones ubiweb site. -It requires [ubiweb-core](https://github.com/ubiweb-media/ubiweb-core) to function. Use this to set up a new Ubiweb domain.- This is now included automatically as a composer package.
+This is a bare bones ubiweb site. This is now included automatically as a composer package.
 
 ## Dev Setup
 - Setup a PHP dev environment. [Valet+](https://github.com/weprovide/valet-plus) or [Valet](https://github.com/laravel/valet) is recommended.
@@ -9,8 +9,6 @@ This is a bare bones ubiweb site. -It requires [ubiweb-core](https://github.com/
 - Run `composer install`
 
 That's it! Of course, you're going to want to configure this more to have a presentable website.
-
--Some templates require this global package to be installed: `composer global require "fxp/composer-asset-plugin:~1.3"`-
 
 ## Setup
 
