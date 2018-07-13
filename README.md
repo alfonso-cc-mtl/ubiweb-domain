@@ -1,31 +1,16 @@
 # Ubiweb Domain
 
-This is a bare bones ubiweb site. It requires [ubiweb-core](https://github.com/ubiweb-media/ubiweb-core) to function. Use this to set up a new Ubiweb domain.
+This is a bare bones ubiweb site. -It requires [ubiweb-core](https://github.com/ubiweb-media/ubiweb-core) to function. Use this to set up a new Ubiweb domain.- This is now included automatically as a composer package.
 
 ## Dev Setup
-- Make a directory structure such as:
-
-```
-.
-+ ubiweb
-+-- ubiweb-core
-+-- domains
-|	+-- domain.com
-```
-- [Install ubiweb-core](https://github.com/ubiweb-media/ubiweb-core).
+- Setup a PHP dev environment. [Valet+](https://github.com/weprovide/valet-plus) or [Valet](https://github.com/laravel/valet) is recommended.
 - Clone domain framework: `git clone https://github.com/ubiweb-media/ubiweb-domain.git domain.com`
-- Adjust `CORE_PATH` path in `.env` to the location of `ubiweb-core/bootstrap.php`
-
-**OR** 
-
-For a more streamlined approach: 
-- Install [Laravel Valet](https://laravel.com/docs/5.5/valet) and park your domains directory.
-- Use `.test` as the TLD (default `.dev` is used by Chrome), by running `valet domain test`
-- Then under `/usr/local/etc/nginx/fastcgi_params` append the entries: `fastcgi_param CORE_PATH  "/path/to/core";` so we won't need a `.env` file in each domain.
+- Rename the `.env.example` to `.env`: `mv .env.example .env`
+- Run `composer install`
 
 That's it! Of course, you're going to want to configure this more to have a presentable website.
 
-Some templates require this global package to be installed: `composer global require "fxp/composer-asset-plugin:~1.3"`
+-Some templates require this global package to be installed: `composer global require "fxp/composer-asset-plugin:~1.3"`-
 
 ## Setup
 
@@ -35,14 +20,16 @@ Some templates require this global package to be installed: `composer global req
 - Create your stylesheet:
 
 ### Styles
-- By default, the main stylesheet will point to `domain.com/assets/main.css`, so your styles must be compiled here. Edit your stylesheet under `content/styles/main.scss` to import your template, like so:
+By default, the main stylesheet will point to `domain.com/assets/main.css`, so your styles must be compiled here. Edit your stylesheet under `content/styles/main.scss` to import your template, like so:
 ``` scss
 @import "_variables.scss"; // optional customization
 @import "../../vendor/templateName/styles/main.scss";
 
 // Your custom styles.
 ```
-- Run `sass content/styles/main.scss:assets/main.css` or `sass watch content/styles/main.scss:assets/main.css` to watch for changes.
+- Run `sass -I ./vendor/npm-asset content/styles/main.scss:assets/main.css` or `sass -I ./vendor/npm-asset watch content/styles/main.scss:assets/main.css` to watch for changes.
+
+If you're on a Mac, sass it should be installed already.
 
 ## Content
 All of the site's content and configuration resides in `./content`.
