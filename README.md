@@ -25,7 +25,7 @@ By default, the main stylesheet will point to `domain.com/assets/main.css`, so y
 
 // Your custom styles.
 ```
-- Run `sass -I ./vendor/npm-asset content/styles/main.scss:assets/main.css` or `sass -I ./vendor/npm-asset watch content/styles/main.scss:assets/main.css` to watch for changes.
+- Run `sass -I ./vendor/npm-asset content/styles/main.scss:assets/main.css` or `sass --watch -I ./vendor/npm-asset content/styles/main.scss:assets/main.css` to watch for changes.
 
 If you're on a Mac, sass it should be installed already.
 
