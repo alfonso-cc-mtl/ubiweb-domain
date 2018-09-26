@@ -1,2 +1,19 @@
 @import "variables";
 @import "../../vendor/ubiweb/template-bedrock/assets/styles/main.scss";
+
+.social-feed {
+    width: 100%;
+    overflow-x: scroll;
+    display: flex;
+    flex-direction: row;
+
+    a {
+        display: block;
+        width: 20%;
+    }
+
+    img {
+        height: auto;
+        width: 100%;
+    }
+}

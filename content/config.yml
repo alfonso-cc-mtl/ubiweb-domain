@@ -12,6 +12,9 @@ gallery_base: /gallery
 gallery_path: /images/gallery
 menu_active_class: active
 
+social:
+    instagram: lezar3d_impression_3d_printing
+
 menu:
     main:
         home:

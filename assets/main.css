@@ -9057,4 +9057,16 @@ body:after {
   max-height: 200px;
   opacity: 1; }
 
+.social-feed {
+  width: 100%;
+  overflow-x: scroll;
+  display: flex;
+  flex-direction: row; }
+  .social-feed a {
+    display: block;
+    width: 20%; }
+  .social-feed img {
+    height: auto;
+    width: 100%; }
+
 /*# sourceMappingURL=main.css.map */

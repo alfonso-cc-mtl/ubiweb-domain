@@ -9,6 +9,13 @@
         {
             "type": "composer",
             "url": "https://asset-packagist.org"
+        },
+        {
+            "type": "path",
+            "url": "/Users/greg/code/ubiweb/ubiweb-core",
+            "options": {
+                "symlink": true
+            }
         }
-    ]    
+    ]
 }
