@@ -201,18 +201,33 @@
 						<input type="text" name="message[Field_2]"/>
 						<button>Send</button>
 					</form>
-					
+
 				</div>
 			</div>
 		</div>
 	@endcomponent
 </section>
 
+<h1>Instagram</h1>
 <div class="social-feed">
-	@foreach( $site->display()->socialFeed('instagram') as $media )
-		<a href="{{ $media['url'] }}">
-			<img src="{{ $media['image'] }}"/>
-		</a>
+	@foreach( $site->display()->socialFeed('instagram', ['num' => 8]) as $media )
+	<a href="{{ $media['url'] }}">
+		<img src="{{ $media['image'] }}"/>
+	</a>
+	@endforeach
+</div>
+
+<h1>Facebook</h1>
+<div class="social-feed">
+	@foreach( $site->display()->socialFeed('facebook', [
+	    'fields' => 'permalink_url, created_time, full_picture, message, shares',
+	    'limit' => 6,
+	]) as $media )
+	@if( isset($media['full_picture']) )
+	<a href="{{ $media['permalink_url'] }}">
+		<img src="{{ $media['full_picture'] }}" />
+	</a>
+	@endif
 	@endforeach
 </div>
 
