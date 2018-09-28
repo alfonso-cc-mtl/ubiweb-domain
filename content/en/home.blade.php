@@ -192,7 +192,9 @@
 							{{ $_GET['error'] }}
 						</div>
 					@endif
-					<form action="{{ $site->url('/contact') }}" method="post">
+					<form action="{{ $site->url('/contact') }}" method="post" enctype="multipart/form-data">
+						<input type="file" name="attachments[Doc]"/>
+						<input type="file" name="attachments[Another Doc]"/>
 						<input type="hidden" name="to" value="greg@codecomment.io" />
 						<input type="hidden" name="subject" value="Contact from Ubiweb" />
 						<input type="hidden" name="_redirect" value="{{ $site->url()->current() }}" />
